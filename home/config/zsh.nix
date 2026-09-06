@@ -30,7 +30,7 @@
       size = "fd --size";
       diff = "delta --side-by-side";
       neofetch = "fastfetch";
-      hm = "home-manager switch --flake path:/home/${username}/linux-dotfiles#linux";
+      hm = "home-manager switch --flake path:/home/${username}/incus-dotfiles#incus";
       gc = "nix-collect-garbage --delete-old";
       clock = "tty-clock -c -s";
       g = "lazygit";

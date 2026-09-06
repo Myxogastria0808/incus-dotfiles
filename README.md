@@ -1,4 +1,4 @@
-# linux-dotfiles
+# incus-dotfiles
 
 Standalone [Home Manager](https://github.com/nix-community/home-manager)
 configuration for an **Incus Linux container** — a minimal Ubuntu
@@ -14,7 +14,7 @@ helpers fall back to OSC 52 since there is no Wayland/X11 display, and a
 `FONTCONFIG_FILE` is pinned so Graphviz/Mermaid have fonts on a bare Ubuntu
 image.
 
-Everything is driven by the flake output `homeConfigurations.linux`
+Everything is driven by the flake output `homeConfigurations.incus`
 (user `hello`, system `x86_64-linux`).
 
 ## Requirements
@@ -42,11 +42,11 @@ c.f. https://github.com/DeterminateSystems/nix-installer
 
 ### 2. Clone this repo
 
-The `hm` alias and Home Manager expect the repo at `~/linux-dotfiles`:
+The `hm` alias and Home Manager expect the repo at `~/incus-dotfiles`:
 
 ```sh
-git clone https://github.com/Myxogastria0808/linux-dotfiles.git ~/linux-dotfiles
-cd ~/linux-dotfiles
+git clone https://github.com/Myxogastria0808/incus-dotfiles.git ~/incus-dotfiles
+cd ~/incus-dotfiles
 ```
 
 > If your Linux username is not `hello`, edit `username` in `flake.nix` (and
@@ -58,7 +58,7 @@ cd ~/linux-dotfiles
 Home Manager is not installed yet, so run it straight from the flake:
 
 ```sh
-nix run home-manager/master -- switch --flake ~/linux-dotfiles#linux
+nix run home-manager/master -- switch --flake ~/incus-dotfiles#incus
 ```
 
 This builds the profile, installs `home-manager` itself, and links all the
@@ -103,7 +103,7 @@ extra prompts.
 Apply changes after editing any `*.nix` file:
 
 ```sh
-hm          # alias for: home-manager switch --flake path:/home/hello/linux-dotfiles#linux
+hm          # alias for: home-manager switch --flake path:/home/hello/incus-dotfiles#incus
 ```
 
 Update inputs (nixpkgs, home-manager, nixvim) and re-apply:
@@ -123,7 +123,7 @@ gc          # alias for: nix-collect-garbage --delete-old
 
 ```
 .
-├── flake.nix              # inputs + homeConfigurations.linux
+├── flake.nix              # inputs + homeConfigurations.incus
 ├── flake.lock
 └── home/
     ├── home.nix           # home.* basics, imports apps.nix

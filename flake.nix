@@ -19,7 +19,7 @@
     {
       ## home-manager ##
       homeConfigurations = {
-        linux = inputs.home-manager.lib.homeManagerConfiguration {
+        incus = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = import inputs.nixpkgs {
             system = systems;
             # Enable unfree pkgs
