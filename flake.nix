@@ -19,7 +19,7 @@
     {
       ## home-manager ##
       homeConfigurations = {
-        hitachi1 = inputs.home-manager.lib.homeManagerConfiguration {
+        linux = inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = import inputs.nixpkgs {
             system = systems;
             # Enable unfree pkgs

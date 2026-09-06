@@ -1,21 +1,14 @@
+{ username, ... }:
 {
-  inputs,
-  system,
-  username,
-  ...
-}:
+  imports = [ ./apps.nix ];
 
-{
   home = {
-    username = "${username}";
+    inherit username;
     homeDirectory = "/home/${username}";
-    stateVersion = "25.11"; # Please read the comment before changing.
+    # Using nixpkgs-unstable, so the release check is disabled to suppress version mismatch warnings
+    stateVersion = "25.11";
+    enableNixpkgsReleaseCheck = false;
   };
-  home.packages = [
-    # nixvim
-    inputs.nixvim-config.packages.${system}.default
-  ];
-  # Let Home Manager install and manage itself.
+
   programs.home-manager.enable = true;
 }
-
