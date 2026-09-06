@@ -10,6 +10,7 @@
   home.packages =
     (with pkgs; [
       yazi
+      bubblewrap
       tdf
       chafa
       ghq
